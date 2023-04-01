@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Customer Tests" thread-count="2" parallel="tests" >
+<test name="Test1">
+    <classes>
+        <class name="CustomerTests">
+            <methods>
+                <include name="createCustomer" />
+                <include name="createCustomerDuplicate" />
+                <include name="errorCustomer" />
+            </methods>
+        </class>
+    </classes>
+</test>
+<test name="Test2">
+    <classes>
+        <class name="CustomerTests">
+            <methods>
+                <include name="checkSortFirstName" />
+                <include name="searchCustomer" />
+            </methods>
+        </class>
+    </classes>
+</test>
+
+</suite>
