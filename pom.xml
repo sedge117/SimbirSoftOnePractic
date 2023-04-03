@@ -20,8 +20,6 @@
         <value>${project.build.directory}/allure-results</value>
     </properties>
 
-
-
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
