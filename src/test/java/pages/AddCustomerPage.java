@@ -1,34 +1,61 @@
 package pages;
 import io.qameta.allure.Step;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class AddCustomerPage {
-    WebDriver driver;
-    public static String addCustomSuccess = "Customer added successfully with customer id :";
-    public static String errorCustomDuplicate = "Please check the details. Customer may be duplicate";
+/**
+ * Класс, для добавления новых клиентов
+ */
+public class AddCustomerPage extends BasePage {
+    /**
+     * Сообщение на алерте, об успешном добавлении клиента
+     */
+    public static final String addCustomSuccess = "Customer added successfully with customer id :";
+
+    /**
+     * Сообщение на алерте, о том что клиент, возможно, дублируется
+     */
+    public static final String errorCustomDuplicate = "Please check the details. Customer may be duplicate";
+
+    /**
+     * Кнопка Add Customer, открывает форму для добавления нового клиента
+     */
     @FindBy(xpath = "//button[@ng-class = 'btnClass1']")
     private WebElement headerAddCustomerButton;
 
+    /**
+     * Поле для ввода имени клиента
+     */
     @FindBy(xpath = "//input[@placeholder = 'First Name']")
     private WebElement firstNameInput;
 
+    /**
+     * Поле для ввода фамилии клиента
+     */
     @FindBy(xpath = "//input[@placeholder ='Last Name']")
     private WebElement lastNameInput;
 
+    /**
+     * поле для ввода кода клиента
+     */
     @FindBy(xpath = "//input[@placeholder = 'Post Code']")
     private WebElement postCodeInput;
 
+    /**
+     * Кнопка Add Customer для создания клиента, после заполнения всех обязательных полей
+     */
     @FindBy(xpath = "//button[text()='Add Customer']")
     private WebElement addCustomerButton;
 
+
+    /**
+     * Конструктор класса
+     */
     public AddCustomerPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
+
 
     @Step("Нажать на кнопку «Add customer»")
     public AddCustomerPage clickAddCustomerInHeader() {
@@ -59,6 +86,7 @@ public class AddCustomerPage {
         addCustomerButton.click();
         return this;
     }
+
     @Step("Проверить текст уведомления и закрыть всплывающее окно")
     public String getAlertTextAndClose() {
         String text = driver.switchTo().alert().getText();

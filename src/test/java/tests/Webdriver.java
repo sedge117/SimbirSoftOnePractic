@@ -1,8 +1,10 @@
-package utils;
-
+package tests;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+/**
+ * Класс, соддержащий в себе настройки веб драйвера
+ */
 public class Webdriver {
     public static ChromeDriver getChromeDriver() {
         System.setProperty("webdriver.gecko.driver",

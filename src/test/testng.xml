@@ -4,21 +4,20 @@
 <suite name="Customer Tests" thread-count="2" parallel="tests" >
 <test name="Test1">
     <classes>
-        <class name="CustomerTests">
+        <class name="tests.AddCustomerTests">
             <methods>
-                <include name="createCustomer" />
-                <include name="createCustomerDuplicate" />
-                <include name="errorCustomer" />
+                <include name="createCustomerTest" />
+                <include name="checkRequiredFieldsTest" />
             </methods>
         </class>
     </classes>
 </test>
 <test name="Test2">
     <classes>
-        <class name="CustomerTests">
+        <class name="tests.CustomersTests">
             <methods>
-                <include name="checkSortFirstName" />
-                <include name="searchCustomer" />
+                <include name="checkSortFirstNameTest" />
+                <include name="searchCustomerTest" />
             </methods>
         </class>
     </classes>
