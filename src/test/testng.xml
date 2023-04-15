@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Customer Tests" thread-count="2" parallel="tests" >
+<test name="Test1">
+    <classes>
+        <class name="tests.AddCustomerTests">
+            <methods>
+                <include name="createCustomerTest" />
+                <include name="checkRequiredFieldsTest" />
+            </methods>
+        </class>
+    </classes>
+</test>
+<test name="Test2">
+    <classes>
+        <class name="tests.CustomersTests">
+            <methods>
+                <include name="checkSortFirstNameTest" />
+                <include name="searchCustomerTest" />
+            </methods>
+        </class>
+    </classes>
+</test>
+
+</suite>
